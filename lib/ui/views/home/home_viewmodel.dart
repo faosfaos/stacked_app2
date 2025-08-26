@@ -26,7 +26,6 @@ class HomeViewModel extends BaseViewModel {
     await _dataBaseRepository.addTodo(
         tableName: DatabaseConstants.todoTable, todo: todo);
     fetchTodos();
-    notifyListeners();
   }
 
   void deleteTodo(Todo todo) async {
@@ -35,7 +34,6 @@ class HomeViewModel extends BaseViewModel {
       todoID: todo.id ?? -1,
     );
     fetchTodos();
-    notifyListeners();
   }
 
   void updateTodo(Todo todo) async {
@@ -44,7 +42,6 @@ class HomeViewModel extends BaseViewModel {
       todo: todo,
     );
     fetchTodos();
-    notifyListeners();
   }
 
   void toggleTodo(Todo todo) {
@@ -53,6 +50,5 @@ class HomeViewModel extends BaseViewModel {
       todo: todo,
     );
     fetchTodos();
-    notifyListeners();
   }
 }
