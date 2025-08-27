@@ -105,8 +105,8 @@ class DialogUtils {
   ) async {
     final value = formKey.currentState?.value;
 
-    final title = value?["title"];
-    final content = value?["content"];
+    final title = value?[_titleFieldName];
+    final content = value?[_contentFieldName];
     Todo newTodo = Todo(
       title: title,
       content: content,
