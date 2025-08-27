@@ -1,15 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:stacked_app2/app/app.bottomsheets.dart';
 import 'package:stacked_app2/app/app.dialogs.dart';
+
+/// Dependency injection için locator konfigürasyonu
 import 'package:stacked_app2/app/app.locator.dart';
+
+/// Uygulama rotaları ve navigasyon ayarları
 import 'package:stacked_app2/app/app.router.dart';
+
+/// Stacked mimarisi için gerekli servisler
 import 'package:stacked_services/stacked_services.dart';
 
+/// Uygulamanın giriş noktası ve temel konfigürasyonların yapıldığı main fonksiyonu
+/// Flutter widget'larını başlatır ve gerekli servisleri ayarlar
 Future<void> main() async {
+  /// Flutter widget binding'ini başlatır, async işlemler için gerekli
   WidgetsFlutterBinding.ensureInitialized();
+
+  /// Dependency injection container'ını kurur
   await setupLocator();
+
+  /// Dialog UI konfigürasyonunu yapar
   setupDialogUi();
+
+  /// Bottom sheet UI konfigürasyonunu yapar
   setupBottomSheetUi();
+
+  /// Ana uygulama widget'ını çalıştırır
   runApp(const MainApp());
 }
 
@@ -20,6 +37,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
+      /// Uygulamanın tema ayarları
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
@@ -27,9 +46,17 @@ class MainApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
+
+      /// Uygulama açıldığında gösterilecek ilk sayfa
       initialRoute: Routes.homeView,
+
+      /// Route üretimi için Stacked router'ını kullan
       onGenerateRoute: StackedRouter().onGenerateRoute,
+
+      /// Global navigasyon anahtarı, servislerden erişim için
       navigatorKey: StackedService.navigatorKey,
+
+      /// Route değişikliklerini izlemek için observer
       navigatorObservers: [StackedService.routeObserver],
     );
   }

@@ -66,6 +66,7 @@ class BuildListTile extends HookWidget {
           ),
         );
         // Dialog'dan dönen güncelleme varsa state'leri güncelle
+        // Null doberse var olan degerleri ata
         title.value = updatedTodo?.title ?? title.value;
         content.value = updatedTodo?.content ?? content.value;
       },
