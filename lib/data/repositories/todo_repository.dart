@@ -1,6 +1,6 @@
 import 'package:stacked_app2/models/todo.dart';
 
-abstract class DataBaseRepository {
+abstract class TodoRepository {
   Future<List<Todo>> fetchTodos();
   Future<int> addTodo({required Todo todo});
   Future<int> updateTodo({required Todo todo});

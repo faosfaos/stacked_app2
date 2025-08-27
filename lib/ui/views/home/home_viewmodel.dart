@@ -1,12 +1,12 @@
 import 'package:stacked/stacked.dart';
 import 'package:stacked_app2/core/constants/used_database.dart';
-import 'package:stacked_app2/data/repositories/database_repository.dart';
+import 'package:stacked_app2/data/repositories/todo_repository.dart';
 import 'package:stacked_app2/models/todo.dart';
 
 class HomeViewModel extends BaseViewModel {
-  final DataBaseRepository _dataBaseRepository;
+  final TodoRepository _dataBaseRepository;
 
-  HomeViewModel({DataBaseRepository? dataBaseRepository})
+  HomeViewModel({TodoRepository? dataBaseRepository})
       : _dataBaseRepository = dataBaseRepository ?? usedDatabase;
   List<Todo> todoList = [];
 
