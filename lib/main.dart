@@ -11,6 +11,9 @@ import 'package:stacked_app2/app/app.router.dart';
 /// Stacked mimarisi için gerekli servisler
 import 'package:stacked_services/stacked_services.dart';
 
+/// Uygulama tema ayarları
+import 'core/theme/app_theme.dart';
+
 /// Bazi widgetler [Column, Text, vs..] ve Dialoglar, öğrencilerimin destegi ile yazdigim
 /// o_package modulunden kullanıldı..
 /// Detaylar icin ("module/o_package") o_package modulunu inceleyebilir, gelistirebilir
@@ -50,13 +53,9 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       /// Uygulamanın tema ayarları
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.orange,
-          brightness: Brightness.dark,
-        ),
-      ),
+      /// Sistem ayarlarina gore uygun tema uygulanir
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
 
       /// Uygulama açıldığında gösterilecek ilk sayfa
       initialRoute: Routes.homeView,
