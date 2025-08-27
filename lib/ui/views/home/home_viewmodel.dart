@@ -1,4 +1,3 @@
-import 'package:o_package/o_extensions.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_app2/core/constants/database_constants.dart';
 import 'package:stacked_app2/core/constants/used_database.dart';
