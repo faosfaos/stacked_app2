@@ -6,13 +6,13 @@ class BuildListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    "2-Build ListView\n--------------------".log();
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => viewModel,
       onViewModelReady: (viewModel) {
         viewModel.fetchTodos();
       },
       builder: (context, viewModel, child) {
-        "2-Build ListView".log();
         return ListView.builder(
           itemCount: viewModel.todoList.length,
           itemBuilder: (context, index) {

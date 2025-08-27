@@ -10,7 +10,7 @@ class BuildListTile extends HookWidget {
   final HomeViewModel viewModel;
   @override
   Widget build(BuildContext context) {
-    "3-Build ListTile - ${todo.title}".log();
+    "-> Build ListTile - ${todo.title}".log();
     var isDone = useState(todo.isDone);
     var title = useState(todo.title);
     var content = useState(todo.content);
