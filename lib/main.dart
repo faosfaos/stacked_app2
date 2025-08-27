@@ -9,6 +9,9 @@ import 'package:stacked_app2/app/app.dialogs.dart';
 /// Bazi Form yapilarinda kullanilan [FormBuilder] sinifi
 /// port edilerek o_package sinifina entegre edildi
 /// [FormBuilder] yapimcilarina tesekkurler..
+/// toIntForNullable(), intToBoolFlexible() gibi isinizi
+/// kolaylastiracak extensionslara o_package modulunden ulasabilirsiniz..
+/// Hepinize basarilar
 
 /// Dependency injection için locator konfigürasyonu
 import 'package:stacked_app2/app/app.locator.dart';
