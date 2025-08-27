@@ -37,7 +37,7 @@ class HomeView extends StackedView<HomeViewModel> {
 }
 
 Widget _buildBody(BuildContext context, HomeViewModel viewModel) {
-  "--------------------\n1-Build BODY\n--------------------".log();
+  "1-Build BODY\n--------------------".log();
   return [
     BuildListView(viewModel: viewModel),
   ].oColumn.make();
