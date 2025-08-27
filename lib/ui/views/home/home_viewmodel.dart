@@ -36,19 +36,18 @@ class HomeViewModel extends BaseViewModel {
     fetchTodos();
   }
 
-  void updateTodo(Todo todo) async {
+  Future<void> updateTodo(Todo todo) async {
     await _dataBaseRepository.updateTodo(
       tableName: DatabaseConstants.todoTable,
       todo: todo,
     );
-    fetchTodos();
   }
 
-  void toggleTodo(Todo todo) {
-    _dataBaseRepository.toggleTodo(
+  void toggleTodo(Todo todo) async {
+    await _dataBaseRepository.toggleTodo(
       tableName: DatabaseConstants.todoTable,
       todo: todo,
     );
-    fetchTodos();
+    //fetchTodos();
   }
 }

@@ -17,39 +17,39 @@ class BuildListView extends StatelessWidget {
           itemCount: viewModel.todoList.length,
           itemBuilder: (context, index) {
             var todo = viewModel.todoList[index];
-            return ListTile(
-              title: todo.title.oText
-                  .combineTextDecoration(
-                    lineThrough: todo.isDone ?? false,
-                  )
-                  .make(),
-              subtitle: todo.content?.oText
-                  .combineTextDecoration(
-                    lineThrough: todo.isDone ?? false,
-                  )
-                  .make(),
-              leading: IconButton(
-                  onPressed: () {
-                    DialogUtils.showDeleteDialog(context, todo, viewModel);
-                    //deleteDialog(context, todo, viewModel);
-                  },
-                  icon: Icon(
-                    Icons.delete,
-                    color: context.themePrimaryColor,
-                  )),
-              trailing: Checkbox(
-                value: todo.isDone,
-                onChanged: (value) {
-                  viewModel.toggleTodo(todo);
-                },
-              ),
-              onLongPress: () {
-                DialogUtils.showUpdateDialog(context, viewModel, todo);
-              },
-            );
+            return BuildListTile(
+                key: todo.toKey, todo: todo, viewModel: viewModel);
           },
         ).oExpand();
       },
     );
   }
 }
+
+/* class BuildListView extends StackedView<HomeViewModel> {
+  const BuildListView2({super.key, required this.viewModel});
+  final HomeViewModel viewModel;
+
+  @override
+  Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
+    "2-Build ListView".log();
+    return ListView.builder(
+      itemCount: viewModel.todoList.length,
+      itemBuilder: (context, index) {
+        var todo = viewModel.todoList[index];
+        return BuildListTile(todo: todo, viewModel: viewModel);
+      },
+    ).oExpand();
+  }
+
+  @override
+  HomeViewModel viewModelBuilder(BuildContext context) {
+    return viewModel;
+  }
+
+  @override
+  void onViewModelReady(HomeViewModel viewModel) {
+    viewModel.fetchTodos();
+  }
+}
+ */

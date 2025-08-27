@@ -92,7 +92,7 @@ class DialogUtils {
 
     final newTodo = Todo(
       title: value[_titleFieldName],
-      content: value[_contentFieldName] ?? "",
+      content: value[_contentFieldName],
     );
     viewModel.addTodo(newTodo);
   }
@@ -102,23 +102,19 @@ class DialogUtils {
     GlobalKey<OFormBuilderState> formKey,
     HomeViewModel viewModel,
     Todo todo,
-  ) {
+  ) async {
     final value = formKey.currentState?.value;
-    if (value == null) return;
 
-    final title = value[_titleFieldName] as String?;
-    final content = value[_contentFieldName] as String? ?? "";
-
-    if (title?.isEmpty ?? true) return;
-
-    Navigator.pop(context);
-
-    final updatedTodo = Todo(
-      title: title!,
+    final title = value?["title"];
+    final content = value?["content"];
+    Todo newTodo = Todo(
+      title: title,
       content: content,
       id: todo.id,
       isDone: todo.isDone,
     );
-    viewModel.updateTodo(updatedTodo);
+
+    viewModel.updateTodo(newTodo);
+    Navigator.pop(context, newTodo);
   }
 }
