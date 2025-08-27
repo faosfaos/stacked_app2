@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:stacked_app2/app/app.bottomsheets.dart';
 import 'package:stacked_app2/app/app.dialogs.dart';
 
+/// Dependency injection için locator konfigürasyonu
+import 'package:stacked_app2/app/app.locator.dart';
+
+/// Uygulama rotaları ve navigasyon ayarları
+import 'package:stacked_app2/app/app.router.dart';
+
+/// Stacked mimarisi için gerekli servisler
+import 'package:stacked_services/stacked_services.dart';
+
 /// Bazi widgetler [Column, Text, vs..] ve Dialoglar, öğrencilerimin destegi ile yazdigim
 /// o_package modulunden kullanıldı..
 /// Detaylar icin ("module/o_package") o_package modulunu inceleyebilir, gelistirebilir
@@ -12,15 +21,6 @@ import 'package:stacked_app2/app/app.dialogs.dart';
 /// toIntForNullable(), intToBoolFlexible() gibi isinizi
 /// kolaylastiracak extensionslara o_package modulunden ulasabilirsiniz..
 /// Hepinize basarilar
-
-/// Dependency injection için locator konfigürasyonu
-import 'package:stacked_app2/app/app.locator.dart';
-
-/// Uygulama rotaları ve navigasyon ayarları
-import 'package:stacked_app2/app/app.router.dart';
-
-/// Stacked mimarisi için gerekli servisler
-import 'package:stacked_services/stacked_services.dart';
 
 /// Uygulamanın giriş noktası ve temel konfigürasyonların yapıldığı main fonksiyonu
 /// Flutter widget'larını başlatır ve gerekli servisleri ayarlar
