@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:stacked_app2/app/app.bottomsheets.dart';
 import 'package:stacked_app2/app/app.dialogs.dart';
 
+/// Bazi widgetler [Column, Text, vs..] ve Dialoglar, öğrencilerimin destegi ile yazdigim
+/// o_package modulunden kullanıldı..
+/// Detaylar icin ("module/o_package") o_package modulunu inceleyebilir, gelistirebilir
+/// ve projelerinizde kullanabilirsiniz..
+/// Bazi Form yapilarinda kullanilan [FormBuilder] sinifi
+/// port edilerek o_package sinifina entegre edildi
+/// [FormBuilder] yapimcilarina tesekkurler..
+
 /// Dependency injection için locator konfigürasyonu
 import 'package:stacked_app2/app/app.locator.dart';
 
