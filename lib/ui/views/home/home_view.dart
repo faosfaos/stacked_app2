@@ -45,9 +45,7 @@ Widget _buildBody(BuildContext context, HomeViewModel viewModel) {
 
 Widget buildFAB(BuildContext context, HomeViewModel viewModel) {
   return FloatingActionButton(
-    onPressed: () {
-      DialogUtils.showAddDialog(context, viewModel);
-    },
+    onPressed: () => DialogUtils.showAddDialog(context, viewModel),
     child: const Icon(Icons.add),
   );
 }
