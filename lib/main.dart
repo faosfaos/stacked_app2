@@ -14,6 +14,7 @@ import 'package:stacked_services/stacked_services.dart';
 /// Uygulama tema ayarları
 import 'core/theme/app_theme.dart';
 
+/// Flutter Surumu: 3.32.8 -> SDK 3.81
 /// Bazi widgetler [Column, Text, vs..] ve Dialoglar, öğrencilerimin destegi ile yazdigim
 /// o_package modulunden kullanıldı..
 /// Detaylar icin ("module/o_package") o_package modulunu inceleyebilir, gelistirebilir
